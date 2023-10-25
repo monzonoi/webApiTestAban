@@ -1,0 +1,57 @@
+# Documentación de la API
+
+## Descripción de la solución
+La API proporciona un sistema de gestión de clientes que permite realizar operaciones CRUD (Crear, Leer, Actualizar, Eliminar) en registros de clientes. La API está diseñada para ser utilizada en aplicaciones web y móviles para administrar información de clientes. Utiliza un servicio de `IClienteService` para interactuar con la lógica de negocio relacionada con los clientes.
+
+## Controlador de Clientes
+
+### Rutas
+Todos los endpoints de este controlador tienen una ruta base `/api/clientes`.
+
+### Métodos HTTP
+
+#### Obtener todos los clientes
+
+- **URL:** `/api/clientes`
+- **Método HTTP:** GET
+- **Descripción:** Obtiene todos los registros de clientes en la base de datos. Regresa una respuesta exitosa con el código 200 en caso de éxito o un código de error 500 en caso de una excepción.
+
+#### Obtener un cliente por ID
+
+- **URL:** `/api/clientes/{id}`
+- **Método HTTP:** GET
+- **Descripción:** Obtiene un registro de cliente por su ID. Si el cliente no se encuentra, se devuelve una respuesta NotFound (código 404). En caso de éxito, se devuelve el cliente con un código 200 o un código de error 500 en caso de una excepción.
+
+#### Búsqueda de clientes por nombre
+
+- **URL:** `/api/clientes/search?query={nombre}`
+- **Método HTTP:** GET
+- **Descripción:** Realiza una búsqueda de clientes por nombre. Regresa una respuesta exitosa con el código 200 en caso de éxito o un código de error 500 en caso de una excepción.
+
+#### Crear un nuevo cliente
+
+- **URL:** `/api/clientes`
+- **Método HTTP:** POST
+- **Descripción:** Crea un nuevo registro de cliente en la base de datos. Se valida el modelo y se devuelve una respuesta BadRequest (código 400) si los datos no son válidos. En caso de éxito, se devuelve el cliente creado con un código 201 o un código de error 500 en caso de una excepción.
+
+#### Actualizar un cliente
+
+- **URL:** `/api/clientes/{id}`
+- **Método HTTP:** PUT
+- **Descripción:** Actualiza un registro de cliente existente en la base de datos. Se valida el modelo y se devuelve una respuesta BadRequest (código 400) si los datos no son válidos. Si el cliente no se encuentra, se devuelve una respuesta NotFound (código 404). En caso de éxito, se devuelve una respuesta NoContent (código 204) o un código de error 500 en caso de una excepción.
+
+#### Eliminar un cliente
+
+- **URL:** `/api/clientes/{id}`
+- **Método HTTP:** DELETE
+- **Descripción:** Elimina un registro de cliente por su ID. Si el cliente no se encuentra, se devuelve una respuesta NotFound (código 404). En caso de éxito, se devuelve una respuesta NoContent (código 204) o un código de error 500 en caso de una excepción.
+
+### Registro de eventos
+La API utiliza un sistema de registro de eventos (`ILogger`) para registrar operaciones exitosas y errores. Los eventos se registran con información detallada, incluyendo el resultado de la operación y cualquier excepción que pueda haber ocurrido.
+
+### Validación de datos
+La API valida los datos de entrada en los métodos POST y PUT. Si los datos no son válidos, se devuelve una respuesta BadRequest (código 400) junto con información sobre los errores de validación.
+
+### Base de datos
+La base de datos subyacente es SQLite, lo que facilita la portabilidad y la gestión de datos. La API utiliza un servicio de `IClienteService` para interactuar con la base de datos y realizar operaciones CRUD en registros de clientes.
+

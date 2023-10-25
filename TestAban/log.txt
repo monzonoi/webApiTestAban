@@ -1,0 +1,433 @@
+2023-10-25 13:47:59.276 -03:00 [Information] Application started. Press Ctrl+C to shut down.
+2023-10-25 13:47:59.303 -03:00 [Information] Hosting environment: "Development"
+2023-10-25 13:47:59.309 -03:00 [Information] Content root path: "C:\GitHubMonzonoi\webApiTestAban\TestAban"
+2023-10-25 13:47:59.315 -03:00 [Information] Request starting HTTP/2.0 GET https://localhost:44398/swagger/index.html  
+2023-10-25 13:48:00.219 -03:00 [Information] Request finished in 914.1905ms 200 text/html;charset=utf-8
+2023-10-25 13:48:00.290 -03:00 [Information] Request starting HTTP/2.0 GET https://localhost:44398/_vs/browserLink  
+2023-10-25 13:48:00.290 -03:00 [Information] Request starting HTTP/2.0 GET https://localhost:44398/_framework/aspnetcore-browser-refresh.js  
+2023-10-25 13:48:00.310 -03:00 [Information] Request finished in 20.0402ms 200 application/javascript; charset=utf-8
+2023-10-25 13:48:00.723 -03:00 [Information] Request finished in 433.3946ms 200 text/javascript; charset=UTF-8
+2023-10-25 13:48:00.926 -03:00 [Information] Request starting HTTP/2.0 GET https://localhost:44398/swagger/v1/swagger.json  
+2023-10-25 13:48:01.220 -03:00 [Information] Request finished in 294.3376ms 200 application/json;charset=utf-8
+2023-10-25 13:48:08.153 -03:00 [Information] Request starting HTTP/2.0 GET https://localhost:44398/api/clientes  
+2023-10-25 13:48:08.170 -03:00 [Information] Executing endpoint '"TestAban.Controllers.ClientesController.GetAll (TestAban)"'
+2023-10-25 13:48:08.234 -03:00 [Information] Route matched with "{action = \"GetAll\", controller = \"Clientes\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[TestAban.Entidades.Cliente]] GetAll()" on controller "TestAban.Controllers.ClientesController" ("TestAban").
+2023-10-25 13:49:19.700 -03:00 [Information] Executed action "TestAban.Controllers.ClientesController.GetAll (TestAban)" in 71459.0973ms
+2023-10-25 13:49:19.703 -03:00 [Information] Executed endpoint '"TestAban.Controllers.ClientesController.GetAll (TestAban)"'
+2023-10-25 13:49:19.899 -03:00 [Error] An unhandled exception has occurred while executing the request.
+Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 1: 'near "DATABASE": syntax error'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteCommand.PrepareAndEnumerateStatements(Stopwatch timer)+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteCommand.GetStatements(Stopwatch timer)+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteNonQuery()
+   at Dapper.SqlMapper.ExecuteCommand(IDbConnection cnn, CommandDefinition& command, Action`2 paramReader) in /_/Dapper/SqlMapper.cs:line 2960
+   at Dapper.SqlMapper.ExecuteImpl(IDbConnection cnn, CommandDefinition& command) in /_/Dapper/SqlMapper.cs:line 656
+   at Dapper.SqlMapper.Execute(IDbConnection cnn, String sql, Object param, IDbTransaction transaction, Nullable`1 commandTimeout, Nullable`1 commandType) in /_/Dapper/SqlMapper.cs:line 527
+   at TestAban.Services.ClienteService.CreateDatabaseAndTable() in C:\GitHubMonzonoi\webApiTestAban\TestAban\Services\ClienteService.cs:line 140
+   at TestAban.Services.ClienteService.GetAll() in C:\GitHubMonzonoi\webApiTestAban\TestAban\Services\ClienteService.cs:line 28
+   at TestAban.Controllers.ClientesController.GetAll() in C:\GitHubMonzonoi\webApiTestAban\TestAban\Controllers\ClientesController.cs:line 28
+   at lambda_method(Closure , Object , Object[] )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutor.Execute(Object target, Object[] parameters)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2023-10-25 13:49:19.915 -03:00 [Information] Request finished in 71760.371ms 500 text/plain
+2023-10-25 13:49:23.948 -03:00 [Information] Request starting HTTP/2.0 GET https://localhost:44398/api/clientes  
+2023-10-25 13:49:23.949 -03:00 [Information] Executing endpoint '"TestAban.Controllers.ClientesController.GetAll (TestAban)"'
+2023-10-25 13:49:23.950 -03:00 [Information] Route matched with "{action = \"GetAll\", controller = \"Clientes\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[TestAban.Entidades.Cliente]] GetAll()" on controller "TestAban.Controllers.ClientesController" ("TestAban").
+2023-10-25 13:50:37.686 -03:00 [Information] Application started. Press Ctrl+C to shut down.
+2023-10-25 13:50:37.703 -03:00 [Information] Hosting environment: "Development"
+2023-10-25 13:50:37.708 -03:00 [Information] Content root path: "C:\GitHubMonzonoi\webApiTestAban\TestAban"
+2023-10-25 13:50:37.708 -03:00 [Information] Request starting HTTP/2.0 GET https://localhost:44398/swagger/index.html  
+2023-10-25 13:50:38.147 -03:00 [Information] Request starting HTTP/2.0 GET https://localhost:44398/_framework/aspnetcore-browser-refresh.js  
+2023-10-25 13:50:38.156 -03:00 [Information] Request starting HTTP/2.0 GET https://localhost:44398/_vs/browserLink  
+2023-10-25 13:50:38.158 -03:00 [Information] Request finished in 8.4898ms 200 application/javascript; charset=utf-8
+2023-10-25 13:50:38.159 -03:00 [Information] Request finished in 457.9232ms 200 text/html;charset=utf-8
+2023-10-25 13:50:38.250 -03:00 [Information] Request finished in 94.4298ms 200 text/javascript; charset=UTF-8
+2023-10-25 13:50:38.402 -03:00 [Information] Request starting HTTP/2.0 GET https://localhost:44398/swagger/v1/swagger.json  
+2023-10-25 13:50:38.667 -03:00 [Information] Request finished in 265.2325ms 200 application/json;charset=utf-8
+2023-10-25 13:50:42.430 -03:00 [Information] Request starting HTTP/2.0 GET https://localhost:44398/api/clientes  
+2023-10-25 13:50:42.441 -03:00 [Information] Executing endpoint '"TestAban.Controllers.ClientesController.GetAll (TestAban)"'
+2023-10-25 13:50:42.466 -03:00 [Information] Route matched with "{action = \"GetAll\", controller = \"Clientes\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[TestAban.Entidades.Cliente]] GetAll()" on controller "TestAban.Controllers.ClientesController" ("TestAban").
+2023-10-25 13:50:58.139 -03:00 [Information] Executed action "TestAban.Controllers.ClientesController.GetAll (TestAban)" in 15661.4731ms
+2023-10-25 13:50:58.140 -03:00 [Information] Executed endpoint '"TestAban.Controllers.ClientesController.GetAll (TestAban)"'
+2023-10-25 13:50:58.283 -03:00 [Error] An unhandled exception has occurred while executing the request.
+System.Exception: Base de datos inexistente, se procedio a su creacion
+   at TestAban.Services.ClienteService.GetAll() in C:\GitHubMonzonoi\webApiTestAban\TestAban\Services\ClienteService.cs:line 31
+   at TestAban.Controllers.ClientesController.GetAll() in C:\GitHubMonzonoi\webApiTestAban\TestAban\Controllers\ClientesController.cs:line 28
+   at lambda_method(Closure , Object , Object[] )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutor.Execute(Object target, Object[] parameters)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2023-10-25 13:50:58.291 -03:00 [Information] Request finished in 15861.4994ms 500 text/plain
+2023-10-25 13:51:15.392 -03:00 [Information] Request starting HTTP/2.0 GET https://localhost:44398/api/clientes  
+2023-10-25 13:51:15.393 -03:00 [Information] Executing endpoint '"TestAban.Controllers.ClientesController.GetAll (TestAban)"'
+2023-10-25 13:51:15.394 -03:00 [Information] Route matched with "{action = \"GetAll\", controller = \"Clientes\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[TestAban.Entidades.Cliente]] GetAll()" on controller "TestAban.Controllers.ClientesController" ("TestAban").
+2023-10-25 13:51:18.337 -03:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[TestAban.Entidades.Cliente, TestAban, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2023-10-25 13:51:18.355 -03:00 [Information] Executed action "TestAban.Controllers.ClientesController.GetAll (TestAban)" in 2960.8507ms
+2023-10-25 13:51:18.355 -03:00 [Information] Executed endpoint '"TestAban.Controllers.ClientesController.GetAll (TestAban)"'
+2023-10-25 13:51:18.356 -03:00 [Information] Request finished in 2963.966ms 200 application/json; charset=utf-8
+2023-10-25 13:52:00.253 -03:00 [Information] Request starting HTTP/2.0 POST https://localhost:44398/api/clientes application/json 220
+2023-10-25 13:52:00.255 -03:00 [Information] Executing endpoint '"TestAban.Controllers.ClientesController.Post (TestAban)"'
+2023-10-25 13:52:00.280 -03:00 [Information] Route matched with "{action = \"Post\", controller = \"Clientes\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult Post(TestAban.Entidades.Cliente)" on controller "TestAban.Controllers.ClientesController" ("TestAban").
+2023-10-25 13:52:02.203 -03:00 [Error] Error al insertar cliente: 0
+System.Exception: Base de datos inexistente, se procedio a su creacion
+   at TestAban.Services.ClienteService.Insert(Cliente cliente) in C:\GitHubMonzonoi\webApiTestAban\TestAban\Services\ClienteService.cs:line 87
+   at TestAban.Controllers.ClientesController.Post(Cliente cliente) in C:\GitHubMonzonoi\webApiTestAban\TestAban\Controllers\ClientesController.cs:line 66
+2023-10-25 13:52:02.207 -03:00 [Information] Executing ObjectResult, writing value of type '"System.String"'.
+2023-10-25 13:52:02.213 -03:00 [Information] Executed action "TestAban.Controllers.ClientesController.Post (TestAban)" in 1932.5829ms
+2023-10-25 13:52:02.216 -03:00 [Information] Executed endpoint '"TestAban.Controllers.ClientesController.Post (TestAban)"'
+2023-10-25 13:52:02.216 -03:00 [Information] Request finished in 1964.6413ms 400 text/plain; charset=utf-8
+2023-10-25 13:52:17.938 -03:00 [Information] Request starting HTTP/2.0 POST https://localhost:44398/api/clientes application/json 220
+2023-10-25 13:52:17.940 -03:00 [Information] Executing endpoint '"TestAban.Controllers.ClientesController.Post (TestAban)"'
+2023-10-25 13:52:17.941 -03:00 [Information] Route matched with "{action = \"Post\", controller = \"Clientes\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult Post(TestAban.Entidades.Cliente)" on controller "TestAban.Controllers.ClientesController" ("TestAban").
+2023-10-25 13:53:28.592 -03:00 [Information] Application started. Press Ctrl+C to shut down.
+2023-10-25 13:53:28.605 -03:00 [Information] Hosting environment: "Development"
+2023-10-25 13:53:28.608 -03:00 [Information] Content root path: "C:\GitHubMonzonoi\webApiTestAban\TestAban"
+2023-10-25 13:53:28.611 -03:00 [Information] Request starting HTTP/2.0 GET https://localhost:44398/swagger/index.html  
+2023-10-25 13:53:28.878 -03:00 [Information] Request finished in 276.6275ms 200 text/html;charset=utf-8
+2023-10-25 13:53:28.891 -03:00 [Information] Request starting HTTP/2.0 GET https://localhost:44398/_vs/browserLink  
+2023-10-25 13:53:28.891 -03:00 [Information] Request starting HTTP/2.0 GET https://localhost:44398/_framework/aspnetcore-browser-refresh.js  
+2023-10-25 13:53:28.910 -03:00 [Information] Request finished in 18.0023ms 200 application/javascript; charset=utf-8
+2023-10-25 13:53:28.934 -03:00 [Information] Request finished in 42.7454ms 200 text/javascript; charset=UTF-8
+2023-10-25 13:53:29.052 -03:00 [Information] Request starting HTTP/2.0 GET https://localhost:44398/swagger/v1/swagger.json  
+2023-10-25 13:53:29.197 -03:00 [Information] Request finished in 145.0405ms 200 application/json;charset=utf-8
+2023-10-25 13:54:12.486 -03:00 [Information] Request starting HTTP/2.0 POST https://localhost:44398/api/clientes application/json 222
+2023-10-25 13:54:12.498 -03:00 [Information] Executing endpoint '"TestAban.Controllers.ClientesController.Post (TestAban)"'
+2023-10-25 13:54:12.537 -03:00 [Information] Route matched with "{action = \"Post\", controller = \"Clientes\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult Post(TestAban.Entidades.Cliente)" on controller "TestAban.Controllers.ClientesController" ("TestAban").
+2023-10-25 13:54:25.440 -03:00 [Information] Cliente insertado correctamente: 0
+2023-10-25 13:54:29.405 -03:00 [Information] Executing ObjectResult, writing value of type '"TestAban.Entidades.Cliente"'.
+2023-10-25 13:54:29.455 -03:00 [Information] Executed action "TestAban.Controllers.ClientesController.Post (TestAban)" in 16908.967ms
+2023-10-25 13:54:29.456 -03:00 [Information] Executed endpoint '"TestAban.Controllers.ClientesController.Post (TestAban)"'
+2023-10-25 13:54:29.456 -03:00 [Information] Request finished in 16974.7366ms 201 application/json; charset=utf-8
+2023-10-25 13:54:43.972 -03:00 [Information] Request starting HTTP/2.0 GET https://localhost:44398/api/clientes  
+2023-10-25 13:54:43.974 -03:00 [Information] Executing endpoint '"TestAban.Controllers.ClientesController.GetAll (TestAban)"'
+2023-10-25 13:54:43.983 -03:00 [Information] Route matched with "{action = \"GetAll\", controller = \"Clientes\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[TestAban.Entidades.Cliente]] GetAll()" on controller "TestAban.Controllers.ClientesController" ("TestAban").
+2023-10-25 13:54:46.163 -03:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[TestAban.Entidades.Cliente, TestAban, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2023-10-25 13:54:46.164 -03:00 [Information] Executed action "TestAban.Controllers.ClientesController.GetAll (TestAban)" in 2180.1473ms
+2023-10-25 13:54:46.165 -03:00 [Information] Executed endpoint '"TestAban.Controllers.ClientesController.GetAll (TestAban)"'
+2023-10-25 13:54:46.165 -03:00 [Information] Request finished in 2193.2915ms 200 application/json; charset=utf-8
+2023-10-25 13:56:48.622 -03:00 [Information] Application started. Press Ctrl+C to shut down.
+2023-10-25 13:56:48.650 -03:00 [Information] Hosting environment: "Development"
+2023-10-25 13:56:48.658 -03:00 [Information] Content root path: "C:\GitHubMonzonoi\webApiTestAban\TestAban"
+2023-10-25 13:56:48.673 -03:00 [Information] Request starting HTTP/2.0 GET https://localhost:44398/swagger/index.html  
+2023-10-25 13:56:49.285 -03:00 [Information] Request finished in 619.6664ms 200 text/html;charset=utf-8
+2023-10-25 13:56:49.426 -03:00 [Information] Request starting HTTP/2.0 GET https://localhost:44398/_vs/browserLink  
+2023-10-25 13:56:49.426 -03:00 [Information] Request starting HTTP/2.0 GET https://localhost:44398/_framework/aspnetcore-browser-refresh.js  
+2023-10-25 13:56:49.442 -03:00 [Information] Request finished in 14.4719ms 200 application/javascript; charset=utf-8
+2023-10-25 13:56:49.508 -03:00 [Information] Request finished in 81.7507ms 200 text/javascript; charset=UTF-8
+2023-10-25 13:56:49.681 -03:00 [Information] Request starting HTTP/2.0 GET https://localhost:44398/swagger/v1/swagger.json  
+2023-10-25 13:56:49.960 -03:00 [Information] Request finished in 280.2973ms 200 application/json;charset=utf-8
+2023-10-25 13:56:56.650 -03:00 [Information] Request starting HTTP/2.0 GET https://localhost:44398/api/clientes  
+2023-10-25 13:56:56.666 -03:00 [Information] Executing endpoint '"TestAban.Controllers.ClientesController.GetAll (TestAban)"'
+2023-10-25 13:56:56.735 -03:00 [Information] Route matched with "{action = \"GetAll\", controller = \"Clientes\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[TestAban.Entidades.Cliente]] GetAll()" on controller "TestAban.Controllers.ClientesController" ("TestAban").
+2023-10-25 13:57:09.876 -03:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[TestAban.Entidades.Cliente, TestAban, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2023-10-25 13:57:09.911 -03:00 [Information] Executed action "TestAban.Controllers.ClientesController.GetAll (TestAban)" in 13161.3217ms
+2023-10-25 13:57:09.913 -03:00 [Information] Executed endpoint '"TestAban.Controllers.ClientesController.GetAll (TestAban)"'
+2023-10-25 13:57:09.914 -03:00 [Information] Request finished in 13264.2848ms 200 application/json; charset=utf-8
+2023-10-25 13:58:01.495 -03:00 [Information] Request starting HTTP/2.0 POST https://localhost:44398/api/clientes application/json 221
+2023-10-25 13:58:01.497 -03:00 [Information] Executing endpoint '"TestAban.Controllers.ClientesController.Post (TestAban)"'
+2023-10-25 13:58:01.528 -03:00 [Information] Route matched with "{action = \"Post\", controller = \"Clientes\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult Post(TestAban.Entidades.Cliente)" on controller "TestAban.Controllers.ClientesController" ("TestAban").
+2023-10-25 13:58:01.669 -03:00 [Information] Cliente insertado correctamente: 0
+2023-10-25 13:58:01.676 -03:00 [Information] Executing ObjectResult, writing value of type '"TestAban.Entidades.Cliente"'.
+2023-10-25 13:58:01.715 -03:00 [Information] Executed action "TestAban.Controllers.ClientesController.Post (TestAban)" in 186.1913ms
+2023-10-25 13:58:01.715 -03:00 [Information] Executed endpoint '"TestAban.Controllers.ClientesController.Post (TestAban)"'
+2023-10-25 13:58:01.715 -03:00 [Information] Request finished in 225.2107ms 201 application/json; charset=utf-8
+2023-10-25 13:58:04.026 -03:00 [Information] Request starting HTTP/2.0 POST https://localhost:44398/api/clientes application/json 221
+2023-10-25 13:58:04.027 -03:00 [Information] Executing endpoint '"TestAban.Controllers.ClientesController.Post (TestAban)"'
+2023-10-25 13:58:04.029 -03:00 [Information] Route matched with "{action = \"Post\", controller = \"Clientes\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult Post(TestAban.Entidades.Cliente)" on controller "TestAban.Controllers.ClientesController" ("TestAban").
+2023-10-25 13:58:04.052 -03:00 [Information] Cliente insertado correctamente: 0
+2023-10-25 13:58:04.053 -03:00 [Information] Executing ObjectResult, writing value of type '"TestAban.Entidades.Cliente"'.
+2023-10-25 13:58:04.054 -03:00 [Information] Executed action "TestAban.Controllers.ClientesController.Post (TestAban)" in 24.8819ms
+2023-10-25 13:58:04.054 -03:00 [Information] Executed endpoint '"TestAban.Controllers.ClientesController.Post (TestAban)"'
+2023-10-25 13:58:04.055 -03:00 [Information] Request finished in 28.7555ms 201 application/json; charset=utf-8
+2023-10-25 13:58:13.833 -03:00 [Information] Request starting HTTP/2.0 GET https://localhost:44398/api/clientes  
+2023-10-25 13:58:13.835 -03:00 [Information] Executing endpoint '"TestAban.Controllers.ClientesController.GetAll (TestAban)"'
+2023-10-25 13:58:13.836 -03:00 [Information] Route matched with "{action = \"GetAll\", controller = \"Clientes\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[TestAban.Entidades.Cliente]] GetAll()" on controller "TestAban.Controllers.ClientesController" ("TestAban").
+2023-10-25 13:58:13.838 -03:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[TestAban.Entidades.Cliente, TestAban, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2023-10-25 13:58:13.840 -03:00 [Information] Executed action "TestAban.Controllers.ClientesController.GetAll (TestAban)" in 3.311ms
+2023-10-25 13:58:13.840 -03:00 [Information] Executed endpoint '"TestAban.Controllers.ClientesController.GetAll (TestAban)"'
+2023-10-25 13:58:13.840 -03:00 [Information] Request finished in 7.616ms 200 application/json; charset=utf-8
+2023-10-25 14:00:06.656 -03:00 [Information] Application started. Press Ctrl+C to shut down.
+2023-10-25 14:00:06.672 -03:00 [Information] Hosting environment: "Development"
+2023-10-25 14:00:06.678 -03:00 [Information] Content root path: "C:\GitHubMonzonoi\webApiTestAban\TestAban"
+2023-10-25 14:00:06.678 -03:00 [Information] Request starting HTTP/2.0 GET https://localhost:44398/swagger/index.html  
+2023-10-25 14:00:07.110 -03:00 [Information] Request finished in 442.6878ms 200 text/html;charset=utf-8
+2023-10-25 14:00:07.199 -03:00 [Information] Request starting HTTP/2.0 GET https://localhost:44398/_framework/aspnetcore-browser-refresh.js  
+2023-10-25 14:00:07.274 -03:00 [Information] Request starting HTTP/2.0 GET https://localhost:44398/_vs/browserLink  
+2023-10-25 14:00:07.289 -03:00 [Information] Request finished in 90.0916ms 200 application/javascript; charset=utf-8
+2023-10-25 14:00:07.820 -03:00 [Information] Request finished in 545.9761ms 200 text/javascript; charset=UTF-8
+2023-10-25 14:00:07.978 -03:00 [Information] Request starting HTTP/2.0 GET https://localhost:44398/swagger/v1/swagger.json  
+2023-10-25 14:00:08.230 -03:00 [Information] Request finished in 252.3716ms 200 application/json;charset=utf-8
+2023-10-25 14:00:14.172 -03:00 [Information] Request starting HTTP/2.0 GET https://localhost:44398/api/clientes  
+2023-10-25 14:00:14.194 -03:00 [Information] Executing endpoint '"TestAban.Controllers.ClientesController.GetAll (TestAban)"'
+2023-10-25 14:00:14.252 -03:00 [Information] Route matched with "{action = \"GetAll\", controller = \"Clientes\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[TestAban.Entidades.Cliente]] GetAll()" on controller "TestAban.Controllers.ClientesController" ("TestAban").
+2023-10-25 14:00:14.783 -03:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[TestAban.Entidades.Cliente, TestAban, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2023-10-25 14:00:14.809 -03:00 [Information] Executed action "TestAban.Controllers.ClientesController.GetAll (TestAban)" in 544.0682ms
+2023-10-25 14:00:14.810 -03:00 [Information] Executed endpoint '"TestAban.Controllers.ClientesController.GetAll (TestAban)"'
+2023-10-25 14:00:14.811 -03:00 [Information] Request finished in 639.1783ms 200 application/json; charset=utf-8
+2023-10-25 14:00:47.937 -03:00 [Information] Application started. Press Ctrl+C to shut down.
+2023-10-25 14:00:47.953 -03:00 [Information] Hosting environment: "Development"
+2023-10-25 14:00:47.957 -03:00 [Information] Content root path: "C:\GitHubMonzonoi\webApiTestAban\TestAban"
+2023-10-25 14:00:47.966 -03:00 [Information] Request starting HTTP/2.0 GET https://localhost:44398/swagger/index.html  
+2023-10-25 14:00:48.324 -03:00 [Information] Request finished in 360.8347ms 200 text/html;charset=utf-8
+2023-10-25 14:00:48.376 -03:00 [Information] Request starting HTTP/2.0 GET https://localhost:44398/_framework/aspnetcore-browser-refresh.js  
+2023-10-25 14:00:48.382 -03:00 [Information] Request starting HTTP/2.0 GET https://localhost:44398/_vs/browserLink  
+2023-10-25 14:00:48.391 -03:00 [Information] Request finished in 14.8313ms 200 application/javascript; charset=utf-8
+2023-10-25 14:00:48.478 -03:00 [Information] Request finished in 96.1851ms 200 text/javascript; charset=UTF-8
+2023-10-25 14:00:48.626 -03:00 [Information] Request starting HTTP/2.0 GET https://localhost:44398/swagger/v1/swagger.json  
+2023-10-25 14:00:48.838 -03:00 [Information] Request finished in 213.2333ms 200 application/json;charset=utf-8
+2023-10-25 14:00:52.551 -03:00 [Information] Request starting HTTP/2.0 GET https://localhost:44398/api/clientes  
+2023-10-25 14:00:52.572 -03:00 [Information] Executing endpoint '"TestAban.Controllers.ClientesController.GetAll (TestAban)"'
+2023-10-25 14:00:52.617 -03:00 [Information] Route matched with "{action = \"GetAll\", controller = \"Clientes\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[TestAban.Entidades.Cliente]] GetAll()" on controller "TestAban.Controllers.ClientesController" ("TestAban").
+2023-10-25 14:00:54.500 -03:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[TestAban.Entidades.Cliente, TestAban, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2023-10-25 14:00:54.531 -03:00 [Information] Executed action "TestAban.Controllers.ClientesController.GetAll (TestAban)" in 1901.8259ms
+2023-10-25 14:00:54.532 -03:00 [Information] Executed endpoint '"TestAban.Controllers.ClientesController.GetAll (TestAban)"'
+2023-10-25 14:00:54.532 -03:00 [Information] Request finished in 1981.4714ms 200 application/json; charset=utf-8
+2023-10-25 14:02:22.236 -03:00 [Information] Application started. Press Ctrl+C to shut down.
+2023-10-25 14:02:22.254 -03:00 [Information] Hosting environment: "Development"
+2023-10-25 14:02:22.258 -03:00 [Information] Content root path: "C:\GitHubMonzonoi\webApiTestAban\TestAban"
+2023-10-25 14:02:22.266 -03:00 [Information] Request starting HTTP/2.0 GET https://localhost:44398/swagger/index.html  
+2023-10-25 14:02:22.668 -03:00 [Information] Request finished in 406.1041ms 200 text/html;charset=utf-8
+2023-10-25 14:02:22.695 -03:00 [Information] Request starting HTTP/2.0 GET https://localhost:44398/_vs/browserLink  
+2023-10-25 14:02:22.695 -03:00 [Information] Request starting HTTP/2.0 GET https://localhost:44398/_framework/aspnetcore-browser-refresh.js  
+2023-10-25 14:02:22.708 -03:00 [Information] Request finished in 9.5842ms 200 application/javascript; charset=utf-8
+2023-10-25 14:02:22.794 -03:00 [Information] Request finished in 99.4814ms 200 text/javascript; charset=UTF-8
+2023-10-25 14:02:22.895 -03:00 [Information] Request starting HTTP/2.0 GET https://localhost:44398/swagger/v1/swagger.json  
+2023-10-25 14:02:23.823 -03:00 [Information] Request finished in 927.6756ms 200 application/json;charset=utf-8
+2023-10-25 14:02:27.360 -03:00 [Information] Request starting HTTP/2.0 GET https://localhost:44398/api/clientes  
+2023-10-25 14:02:27.383 -03:00 [Information] Executing endpoint '"TestAban.Controllers.ClientesController.GetAll (TestAban)"'
+2023-10-25 14:02:27.438 -03:00 [Information] Route matched with "{action = \"GetAll\", controller = \"Clientes\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[TestAban.Entidades.Cliente]] GetAll()" on controller "TestAban.Controllers.ClientesController" ("TestAban").
+2023-10-25 14:02:29.743 -03:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[TestAban.Entidades.Cliente, TestAban, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2023-10-25 14:02:29.770 -03:00 [Information] Executed action "TestAban.Controllers.ClientesController.GetAll (TestAban)" in 2320.4846ms
+2023-10-25 14:02:29.771 -03:00 [Information] Executed endpoint '"TestAban.Controllers.ClientesController.GetAll (TestAban)"'
+2023-10-25 14:02:29.772 -03:00 [Information] Request finished in 2412.9701ms 200 application/json; charset=utf-8
+2023-10-25 14:03:15.458 -03:00 [Information] Application started. Press Ctrl+C to shut down.
+2023-10-25 14:03:15.474 -03:00 [Information] Hosting environment: "Development"
+2023-10-25 14:03:15.477 -03:00 [Information] Content root path: "C:\GitHubMonzonoi\webApiTestAban\TestAban"
+2023-10-25 14:03:15.486 -03:00 [Information] Request starting HTTP/2.0 GET https://localhost:44398/swagger/index.html  
+2023-10-25 14:03:15.911 -03:00 [Information] Request starting HTTP/2.0 GET https://localhost:44398/_framework/aspnetcore-browser-refresh.js  
+2023-10-25 14:03:15.915 -03:00 [Information] Request finished in 432.5427ms 200 text/html;charset=utf-8
+2023-10-25 14:03:15.919 -03:00 [Information] Request finished in 8.1019ms 200 application/javascript; charset=utf-8
+2023-10-25 14:03:15.938 -03:00 [Information] Request starting HTTP/2.0 GET https://localhost:44398/_vs/browserLink  
+2023-10-25 14:03:16.016 -03:00 [Information] Request finished in 77.3682ms 200 text/javascript; charset=UTF-8
+2023-10-25 14:03:16.161 -03:00 [Information] Request starting HTTP/2.0 GET https://localhost:44398/swagger/v1/swagger.json  
+2023-10-25 14:03:16.398 -03:00 [Information] Request finished in 237.8062ms 200 application/json;charset=utf-8
+2023-10-25 14:03:22.843 -03:00 [Information] Request starting HTTP/2.0 GET https://localhost:44398/api/clientes  
+2023-10-25 14:03:22.858 -03:00 [Information] Executing endpoint '"TestAban.Controllers.ClientesController.GetAll (TestAban)"'
+2023-10-25 14:03:22.911 -03:00 [Information] Route matched with "{action = \"GetAll\", controller = \"Clientes\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[TestAban.Entidades.Cliente]] GetAll()" on controller "TestAban.Controllers.ClientesController" ("TestAban").
+2023-10-25 14:03:40.728 -03:00 [Information] Executed action "TestAban.Controllers.ClientesController.GetAll (TestAban)" in 17802.1851ms
+2023-10-25 14:03:40.732 -03:00 [Information] Executed endpoint '"TestAban.Controllers.ClientesController.GetAll (TestAban)"'
+2023-10-25 14:03:41.025 -03:00 [Error] An unhandled exception has occurred while executing the request.
+System.Exception: Base de datos inexistente, se procedio a su creacion
+   at TestAban.Services.ClienteService.GetAll() in C:\GitHubMonzonoi\webApiTestAban\TestAban\Services\ClienteService.cs:line 31
+   at TestAban.Controllers.ClientesController.GetAll() in C:\GitHubMonzonoi\webApiTestAban\TestAban\Controllers\ClientesController.cs:line 28
+   at lambda_method(Closure , Object , Object[] )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutor.Execute(Object target, Object[] parameters)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2023-10-25 14:03:41.040 -03:00 [Information] Request finished in 18197.8084ms 500 text/plain
+2023-10-25 14:03:46.452 -03:00 [Information] Request starting HTTP/2.0 GET https://localhost:44398/api/clientes  
+2023-10-25 14:03:46.453 -03:00 [Information] Executing endpoint '"TestAban.Controllers.ClientesController.GetAll (TestAban)"'
+2023-10-25 14:03:46.454 -03:00 [Information] Route matched with "{action = \"GetAll\", controller = \"Clientes\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[TestAban.Entidades.Cliente]] GetAll()" on controller "TestAban.Controllers.ClientesController" ("TestAban").
+2023-10-25 14:03:47.746 -03:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[TestAban.Entidades.Cliente, TestAban, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2023-10-25 14:03:47.758 -03:00 [Information] Executed action "TestAban.Controllers.ClientesController.GetAll (TestAban)" in 1302.5892ms
+2023-10-25 14:03:47.761 -03:00 [Information] Executed endpoint '"TestAban.Controllers.ClientesController.GetAll (TestAban)"'
+2023-10-25 14:03:47.761 -03:00 [Information] Request finished in 1310.2619ms 200 application/json; charset=utf-8
+2023-10-25 14:03:55.505 -03:00 [Information] Request starting HTTP/2.0 GET https://localhost:44398/api/clientes  
+2023-10-25 14:03:55.506 -03:00 [Information] Executing endpoint '"TestAban.Controllers.ClientesController.GetAll (TestAban)"'
+2023-10-25 14:03:55.507 -03:00 [Information] Route matched with "{action = \"GetAll\", controller = \"Clientes\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[TestAban.Entidades.Cliente]] GetAll()" on controller "TestAban.Controllers.ClientesController" ("TestAban").
+2023-10-25 14:03:57.002 -03:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[TestAban.Entidades.Cliente, TestAban, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2023-10-25 14:03:57.004 -03:00 [Information] Executed action "TestAban.Controllers.ClientesController.GetAll (TestAban)" in 1496.7397ms
+2023-10-25 14:03:57.004 -03:00 [Information] Executed endpoint '"TestAban.Controllers.ClientesController.GetAll (TestAban)"'
+2023-10-25 14:03:57.004 -03:00 [Information] Request finished in 1499.169ms 200 application/json; charset=utf-8
+2023-10-25 14:04:09.024 -03:00 [Information] Request starting HTTP/2.0 POST https://localhost:44398/api/clientes application/json 201
+2023-10-25 14:04:09.026 -03:00 [Information] Executing endpoint '"TestAban.Controllers.ClientesController.Post (TestAban)"'
+2023-10-25 14:04:09.060 -03:00 [Information] Route matched with "{action = \"Post\", controller = \"Clientes\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult Post(TestAban.Entidades.Cliente)" on controller "TestAban.Controllers.ClientesController" ("TestAban").
+2023-10-25 14:04:09.257 -03:00 [Information] Cliente insertado correctamente: 0
+2023-10-25 14:04:09.261 -03:00 [Information] Executing ObjectResult, writing value of type '"TestAban.Entidades.Cliente"'.
+2023-10-25 14:04:09.342 -03:00 [Information] Executed action "TestAban.Controllers.ClientesController.Post (TestAban)" in 280.2122ms
+2023-10-25 14:04:09.342 -03:00 [Information] Executed endpoint '"TestAban.Controllers.ClientesController.Post (TestAban)"'
+2023-10-25 14:04:09.349 -03:00 [Information] Request finished in 326.1483ms 201 application/json; charset=utf-8
+2023-10-25 14:04:10.370 -03:00 [Information] Request starting HTTP/2.0 POST https://localhost:44398/api/clientes application/json 201
+2023-10-25 14:04:10.372 -03:00 [Information] Executing endpoint '"TestAban.Controllers.ClientesController.Post (TestAban)"'
+2023-10-25 14:04:10.373 -03:00 [Information] Route matched with "{action = \"Post\", controller = \"Clientes\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult Post(TestAban.Entidades.Cliente)" on controller "TestAban.Controllers.ClientesController" ("TestAban").
+2023-10-25 14:04:10.395 -03:00 [Information] Cliente insertado correctamente: 0
+2023-10-25 14:04:10.398 -03:00 [Information] Executing ObjectResult, writing value of type '"TestAban.Entidades.Cliente"'.
+2023-10-25 14:04:10.420 -03:00 [Information] Executed action "TestAban.Controllers.ClientesController.Post (TestAban)" in 45.5353ms
+2023-10-25 14:04:10.420 -03:00 [Information] Executed endpoint '"TestAban.Controllers.ClientesController.Post (TestAban)"'
+2023-10-25 14:04:10.421 -03:00 [Information] Request finished in 50.9335ms 201 application/json; charset=utf-8
+2023-10-25 14:04:12.385 -03:00 [Information] Request starting HTTP/2.0 POST https://localhost:44398/api/clientes application/json 201
+2023-10-25 14:04:12.387 -03:00 [Information] Executing endpoint '"TestAban.Controllers.ClientesController.Post (TestAban)"'
+2023-10-25 14:04:12.388 -03:00 [Information] Route matched with "{action = \"Post\", controller = \"Clientes\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult Post(TestAban.Entidades.Cliente)" on controller "TestAban.Controllers.ClientesController" ("TestAban").
+2023-10-25 14:04:12.417 -03:00 [Information] Cliente insertado correctamente: 0
+2023-10-25 14:04:12.418 -03:00 [Information] Executing ObjectResult, writing value of type '"TestAban.Entidades.Cliente"'.
+2023-10-25 14:04:12.420 -03:00 [Information] Executed action "TestAban.Controllers.ClientesController.Post (TestAban)" in 32.0373ms
+2023-10-25 14:04:12.421 -03:00 [Information] Executed endpoint '"TestAban.Controllers.ClientesController.Post (TestAban)"'
+2023-10-25 14:04:12.421 -03:00 [Information] Request finished in 36.197ms 201 application/json; charset=utf-8
+2023-10-25 14:04:12.943 -03:00 [Information] Request starting HTTP/2.0 POST https://localhost:44398/api/clientes application/json 201
+2023-10-25 14:04:12.944 -03:00 [Information] Executing endpoint '"TestAban.Controllers.ClientesController.Post (TestAban)"'
+2023-10-25 14:04:12.944 -03:00 [Information] Route matched with "{action = \"Post\", controller = \"Clientes\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult Post(TestAban.Entidades.Cliente)" on controller "TestAban.Controllers.ClientesController" ("TestAban").
+2023-10-25 14:04:12.963 -03:00 [Information] Cliente insertado correctamente: 0
+2023-10-25 14:04:12.965 -03:00 [Information] Executing ObjectResult, writing value of type '"TestAban.Entidades.Cliente"'.
+2023-10-25 14:04:12.967 -03:00 [Information] Executed action "TestAban.Controllers.ClientesController.Post (TestAban)" in 22.3084ms
+2023-10-25 14:04:12.967 -03:00 [Information] Executed endpoint '"TestAban.Controllers.ClientesController.Post (TestAban)"'
+2023-10-25 14:04:12.968 -03:00 [Information] Request finished in 25.2594ms 201 application/json; charset=utf-8
+2023-10-25 14:04:13.435 -03:00 [Information] Request starting HTTP/2.0 POST https://localhost:44398/api/clientes application/json 201
+2023-10-25 14:04:13.437 -03:00 [Information] Executing endpoint '"TestAban.Controllers.ClientesController.Post (TestAban)"'
+2023-10-25 14:04:13.438 -03:00 [Information] Route matched with "{action = \"Post\", controller = \"Clientes\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult Post(TestAban.Entidades.Cliente)" on controller "TestAban.Controllers.ClientesController" ("TestAban").
+2023-10-25 14:04:13.477 -03:00 [Information] Cliente insertado correctamente: 0
+2023-10-25 14:04:13.479 -03:00 [Information] Executing ObjectResult, writing value of type '"TestAban.Entidades.Cliente"'.
+2023-10-25 14:04:13.484 -03:00 [Information] Executed action "TestAban.Controllers.ClientesController.Post (TestAban)" in 46.2154ms
+2023-10-25 14:04:13.485 -03:00 [Information] Executed endpoint '"TestAban.Controllers.ClientesController.Post (TestAban)"'
+2023-10-25 14:04:13.487 -03:00 [Information] Request finished in 51.2502ms 201 application/json; charset=utf-8
+2023-10-25 14:04:26.399 -03:00 [Information] Request starting HTTP/2.0 GET https://localhost:44398/api/clientes  
+2023-10-25 14:04:26.401 -03:00 [Information] Executing endpoint '"TestAban.Controllers.ClientesController.GetAll (TestAban)"'
+2023-10-25 14:04:26.403 -03:00 [Information] Route matched with "{action = \"GetAll\", controller = \"Clientes\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[TestAban.Entidades.Cliente]] GetAll()" on controller "TestAban.Controllers.ClientesController" ("TestAban").
+2023-10-25 14:04:27.871 -03:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[TestAban.Entidades.Cliente, TestAban, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2023-10-25 14:04:27.873 -03:00 [Information] Executed action "TestAban.Controllers.ClientesController.GetAll (TestAban)" in 1469.2884ms
+2023-10-25 14:04:27.873 -03:00 [Information] Executed endpoint '"TestAban.Controllers.ClientesController.GetAll (TestAban)"'
+2023-10-25 14:04:27.873 -03:00 [Information] Request finished in 1475.1685ms 200 application/json; charset=utf-8
+2023-10-25 14:04:52.374 -03:00 [Information] Request starting HTTP/2.0 GET https://localhost:44398/api/clientes/2  
+2023-10-25 14:04:52.377 -03:00 [Information] Executing endpoint '"TestAban.Controllers.ClientesController.Get (TestAban)"'
+2023-10-25 14:04:52.388 -03:00 [Information] Route matched with "{action = \"Get\", controller = \"Clientes\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[TestAban.Entidades.Cliente] Get(Int32)" on controller "TestAban.Controllers.ClientesController" ("TestAban").
+2023-10-25 14:04:52.397 -03:00 [Information] Executing ObjectResult, writing value of type '"TestAban.Entidades.Cliente"'.
+2023-10-25 14:04:52.399 -03:00 [Information] Executed action "TestAban.Controllers.ClientesController.Get (TestAban)" in 10.0622ms
+2023-10-25 14:04:52.400 -03:00 [Information] Executed endpoint '"TestAban.Controllers.ClientesController.Get (TestAban)"'
+2023-10-25 14:04:52.400 -03:00 [Information] Request finished in 27.3524ms 200 application/json; charset=utf-8
+2023-10-25 14:05:25.015 -03:00 [Information] Application started. Press Ctrl+C to shut down.
+2023-10-25 14:05:25.027 -03:00 [Information] Hosting environment: "Development"
+2023-10-25 14:05:25.031 -03:00 [Information] Content root path: "C:\GitHubMonzonoi\webApiTestAban\TestAban"
+2023-10-25 14:05:25.032 -03:00 [Information] Request starting HTTP/2.0 GET https://localhost:44398/swagger/index.html  
+2023-10-25 14:05:25.282 -03:00 [Information] Request finished in 257.4753ms 200 text/html;charset=utf-8
+2023-10-25 14:05:25.284 -03:00 [Information] Request starting HTTP/2.0 GET https://localhost:44398/_vs/browserLink  
+2023-10-25 14:05:25.284 -03:00 [Information] Request starting HTTP/2.0 GET https://localhost:44398/_framework/aspnetcore-browser-refresh.js  
+2023-10-25 14:05:25.305 -03:00 [Information] Request finished in 20.5071ms 200 application/javascript; charset=utf-8
+2023-10-25 14:05:25.330 -03:00 [Information] Request finished in 46.0058ms 200 text/javascript; charset=UTF-8
+2023-10-25 14:05:25.468 -03:00 [Information] Request starting HTTP/2.0 GET https://localhost:44398/swagger/v1/swagger.json  
+2023-10-25 14:05:25.647 -03:00 [Information] Request finished in 182.7955ms 200 application/json;charset=utf-8
+2023-10-25 14:06:00.502 -03:00 [Information] Request starting HTTP/2.0 PUT https://localhost:44398/api/clientes/2 application/json 203
+2023-10-25 14:06:00.513 -03:00 [Information] Executing endpoint '"TestAban.Controllers.ClientesController.Put (TestAban)"'
+2023-10-25 14:06:00.573 -03:00 [Information] Route matched with "{action = \"Put\", controller = \"Clientes\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult Put(Int32, TestAban.Entidades.Cliente)" on controller "TestAban.Controllers.ClientesController" ("TestAban").
+2023-10-25 14:06:57.299 -03:00 [Information] Application started. Press Ctrl+C to shut down.
+2023-10-25 14:06:57.317 -03:00 [Information] Hosting environment: "Development"
+2023-10-25 14:06:57.321 -03:00 [Information] Content root path: "C:\GitHubMonzonoi\webApiTestAban\TestAban"
+2023-10-25 14:06:57.328 -03:00 [Information] Request starting HTTP/2.0 GET https://localhost:44398/swagger/index.html  
+2023-10-25 14:06:57.691 -03:00 [Information] Request finished in 372.6927ms 200 text/html;charset=utf-8
+2023-10-25 14:06:57.704 -03:00 [Information] Request starting HTTP/2.0 GET https://localhost:44398/_framework/aspnetcore-browser-refresh.js  
+2023-10-25 14:06:57.737 -03:00 [Information] Request starting HTTP/2.0 GET https://localhost:44398/_vs/browserLink  
+2023-10-25 14:06:57.763 -03:00 [Information] Request finished in 59.0089ms 200 application/javascript; charset=utf-8
+2023-10-25 14:06:57.863 -03:00 [Information] Request finished in 126.3447ms 200 text/javascript; charset=UTF-8
+2023-10-25 14:06:57.995 -03:00 [Information] Request starting HTTP/2.0 GET https://localhost:44398/swagger/v1/swagger.json  
+2023-10-25 14:06:58.210 -03:00 [Information] Request finished in 214.3511ms 200 application/json;charset=utf-8
+2023-10-25 14:07:03.304 -03:00 [Information] Request starting HTTP/2.0 GET https://localhost:44398/api/clientes  
+2023-10-25 14:07:03.311 -03:00 [Information] Executing endpoint '"TestAban.Controllers.ClientesController.GetAll (TestAban)"'
+2023-10-25 14:07:03.331 -03:00 [Information] Route matched with "{action = \"GetAll\", controller = \"Clientes\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[TestAban.Entidades.Cliente]] GetAll()" on controller "TestAban.Controllers.ClientesController" ("TestAban").
+2023-10-25 14:07:05.001 -03:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[TestAban.Entidades.Cliente, TestAban, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2023-10-25 14:07:05.017 -03:00 [Information] Executed action "TestAban.Controllers.ClientesController.GetAll (TestAban)" in 1679.5053ms
+2023-10-25 14:07:05.017 -03:00 [Information] Executed endpoint '"TestAban.Controllers.ClientesController.GetAll (TestAban)"'
+2023-10-25 14:07:05.018 -03:00 [Information] Request finished in 1714.3114ms 200 application/json; charset=utf-8
+2023-10-25 14:07:44.038 -03:00 [Information] Request starting HTTP/2.0 PUT https://localhost:44398/api/clientes/4 application/json 221
+2023-10-25 14:07:44.040 -03:00 [Information] Executing endpoint '"TestAban.Controllers.ClientesController.Put (TestAban)"'
+2023-10-25 14:07:44.060 -03:00 [Information] Route matched with "{action = \"Put\", controller = \"Clientes\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult Put(Int32, TestAban.Entidades.Cliente)" on controller "TestAban.Controllers.ClientesController" ("TestAban").
+2023-10-25 14:07:44.108 -03:00 [Information] Executing ObjectResult, writing value of type '"Microsoft.AspNetCore.Mvc.ValidationProblemDetails"'.
+2023-10-25 14:07:44.110 -03:00 [Information] Executed action "TestAban.Controllers.ClientesController.Put (TestAban)" in 50.3765ms
+2023-10-25 14:07:44.110 -03:00 [Information] Executed endpoint '"TestAban.Controllers.ClientesController.Put (TestAban)"'
+2023-10-25 14:07:44.111 -03:00 [Information] Request finished in 77.0394ms 400 application/problem+json; charset=utf-8
+2023-10-25 14:07:52.917 -03:00 [Information] Request starting HTTP/2.0 GET https://localhost:44398/api/clientes  
+2023-10-25 14:07:52.918 -03:00 [Information] Executing endpoint '"TestAban.Controllers.ClientesController.GetAll (TestAban)"'
+2023-10-25 14:07:52.920 -03:00 [Information] Route matched with "{action = \"GetAll\", controller = \"Clientes\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[TestAban.Entidades.Cliente]] GetAll()" on controller "TestAban.Controllers.ClientesController" ("TestAban").
+2023-10-25 14:07:55.598 -03:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[TestAban.Entidades.Cliente, TestAban, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2023-10-25 14:07:55.600 -03:00 [Information] Executed action "TestAban.Controllers.ClientesController.GetAll (TestAban)" in 2678.7502ms
+2023-10-25 14:07:55.600 -03:00 [Information] Executed endpoint '"TestAban.Controllers.ClientesController.GetAll (TestAban)"'
+2023-10-25 14:07:55.600 -03:00 [Information] Request finished in 2683.8397ms 200 application/json; charset=utf-8
+2023-10-25 14:08:11.300 -03:00 [Information] Request starting HTTP/2.0 PUT https://localhost:44398/api/clientes/4 application/json 221
+2023-10-25 14:08:11.302 -03:00 [Information] Executing endpoint '"TestAban.Controllers.ClientesController.Put (TestAban)"'
+2023-10-25 14:08:11.302 -03:00 [Information] Route matched with "{action = \"Put\", controller = \"Clientes\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult Put(Int32, TestAban.Entidades.Cliente)" on controller "TestAban.Controllers.ClientesController" ("TestAban").
+2023-10-25 14:08:11.306 -03:00 [Information] Executing ObjectResult, writing value of type '"Microsoft.AspNetCore.Mvc.ValidationProblemDetails"'.
+2023-10-25 14:08:11.307 -03:00 [Information] Executed action "TestAban.Controllers.ClientesController.Put (TestAban)" in 4.8389ms
+2023-10-25 14:08:11.308 -03:00 [Information] Executed endpoint '"TestAban.Controllers.ClientesController.Put (TestAban)"'
+2023-10-25 14:08:11.309 -03:00 [Information] Request finished in 9.0188ms 400 application/problem+json; charset=utf-8
+2023-10-25 14:08:42.937 -03:00 [Information] Request starting HTTP/2.0 PUT https://localhost:44398/api/clientes/4 application/json 221
+2023-10-25 14:08:42.938 -03:00 [Information] Executing endpoint '"TestAban.Controllers.ClientesController.Put (TestAban)"'
+2023-10-25 14:08:42.940 -03:00 [Information] Route matched with "{action = \"Put\", controller = \"Clientes\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult Put(Int32, TestAban.Entidades.Cliente)" on controller "TestAban.Controllers.ClientesController" ("TestAban").
+2023-10-25 14:08:42.945 -03:00 [Information] Executing ObjectResult, writing value of type '"Microsoft.AspNetCore.Mvc.ValidationProblemDetails"'.
+2023-10-25 14:08:42.946 -03:00 [Information] Executed action "TestAban.Controllers.ClientesController.Put (TestAban)" in 5.2583ms
+2023-10-25 14:08:42.946 -03:00 [Information] Executed endpoint '"TestAban.Controllers.ClientesController.Put (TestAban)"'
+2023-10-25 14:08:42.946 -03:00 [Information] Request finished in 9.125ms 400 application/problem+json; charset=utf-8
+2023-10-25 14:08:43.750 -03:00 [Information] Request starting HTTP/2.0 PUT https://localhost:44398/api/clientes/4 application/json 221
+2023-10-25 14:08:43.751 -03:00 [Information] Executing endpoint '"TestAban.Controllers.ClientesController.Put (TestAban)"'
+2023-10-25 14:08:43.751 -03:00 [Information] Route matched with "{action = \"Put\", controller = \"Clientes\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult Put(Int32, TestAban.Entidades.Cliente)" on controller "TestAban.Controllers.ClientesController" ("TestAban").
+2023-10-25 14:08:43.754 -03:00 [Information] Executing ObjectResult, writing value of type '"Microsoft.AspNetCore.Mvc.ValidationProblemDetails"'.
+2023-10-25 14:08:43.761 -03:00 [Information] Executed action "TestAban.Controllers.ClientesController.Put (TestAban)" in 9.0389ms
+2023-10-25 14:08:43.761 -03:00 [Information] Executed endpoint '"TestAban.Controllers.ClientesController.Put (TestAban)"'
+2023-10-25 14:08:43.761 -03:00 [Information] Request finished in 11.0358ms 400 application/problem+json; charset=utf-8
+2023-10-25 14:09:11.634 -03:00 [Information] Application started. Press Ctrl+C to shut down.
+2023-10-25 14:09:11.654 -03:00 [Information] Hosting environment: "Development"
+2023-10-25 14:09:11.659 -03:00 [Information] Content root path: "C:\GitHubMonzonoi\webApiTestAban\TestAban"
+2023-10-25 14:09:11.656 -03:00 [Information] Request starting HTTP/2.0 GET https://localhost:44398/swagger/index.html  
+2023-10-25 14:09:12.065 -03:00 [Information] Request finished in 418.0145ms 200 text/html;charset=utf-8
+2023-10-25 14:09:12.081 -03:00 [Information] Request starting HTTP/2.0 GET https://localhost:44398/_framework/aspnetcore-browser-refresh.js  
+2023-10-25 14:09:12.082 -03:00 [Information] Request starting HTTP/2.0 GET https://localhost:44398/_vs/browserLink  
+2023-10-25 14:09:12.107 -03:00 [Information] Request finished in 25.7606ms 200 application/javascript; charset=utf-8
+2023-10-25 14:09:12.147 -03:00 [Information] Request finished in 66.1529ms 200 text/javascript; charset=UTF-8
+2023-10-25 14:09:12.323 -03:00 [Information] Request starting HTTP/2.0 GET https://localhost:44398/swagger/v1/swagger.json  
+2023-10-25 14:09:12.558 -03:00 [Information] Request finished in 234.8473ms 200 application/json;charset=utf-8
+2023-10-25 14:09:32.929 -03:00 [Information] Request starting HTTP/2.0 PUT https://localhost:44398/api/clientes/4 application/json 217
+2023-10-25 14:09:32.939 -03:00 [Information] Executing endpoint '"TestAban.Controllers.ClientesController.Put (TestAban)"'
+2023-10-25 14:09:32.978 -03:00 [Information] Route matched with "{action = \"Put\", controller = \"Clientes\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult Put(Int32, TestAban.Entidades.Cliente)" on controller "TestAban.Controllers.ClientesController" ("TestAban").
+2023-10-25 14:09:35.654 -03:00 [Information] Executing HttpStatusCodeResult, setting HTTP status code 204
+2023-10-25 14:09:35.662 -03:00 [Information] Executed action "TestAban.Controllers.ClientesController.Put (TestAban)" in 2676.7212ms
+2023-10-25 14:09:35.662 -03:00 [Information] Executed endpoint '"TestAban.Controllers.ClientesController.Put (TestAban)"'
+2023-10-25 14:09:35.663 -03:00 [Information] Request finished in 2738.8975ms 204 
+2023-10-25 14:09:44.857 -03:00 [Information] Request starting HTTP/2.0 GET https://localhost:44398/api/clientes  
+2023-10-25 14:09:44.859 -03:00 [Information] Executing endpoint '"TestAban.Controllers.ClientesController.GetAll (TestAban)"'
+2023-10-25 14:09:44.866 -03:00 [Information] Route matched with "{action = \"GetAll\", controller = \"Clientes\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[TestAban.Entidades.Cliente]] GetAll()" on controller "TestAban.Controllers.ClientesController" ("TestAban").
+2023-10-25 14:09:44.885 -03:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[TestAban.Entidades.Cliente, TestAban, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2023-10-25 14:09:44.889 -03:00 [Information] Executed action "TestAban.Controllers.ClientesController.GetAll (TestAban)" in 21.9382ms
+2023-10-25 14:09:44.889 -03:00 [Information] Executed endpoint '"TestAban.Controllers.ClientesController.GetAll (TestAban)"'
+2023-10-25 14:09:44.889 -03:00 [Information] Request finished in 32.762ms 200 application/json; charset=utf-8

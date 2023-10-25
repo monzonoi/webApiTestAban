@@ -1,0 +1,37 @@
+declare @databaseName as varchar(9) = 'testAban'
+declare @tableName as varchar(9) =  'Clientes';
+
+declare @dbExists as int = (SELECT COUNT(*) FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMA_NAME = @databaseName);
+
+IF @dbExists = 0 THEN
+    CREATE DATABASE testAban;
+END IF;
+
+
+USE testAban;
+
+
+declare @tableExists as int = (SELECT COUNT(*) FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = @databaseName AND TABLE_NAME = @tableName);
+
+-- Crear la tabla si no existe
+IF @tableExists = 0 THEN
+    CREATE TABLE testAban.Clientes (
+        Id INT AUTO_INCREMENT PRIMARY KEY,
+        Nombres VARCHAR(255) NOT NULL,
+        Apellidos VARCHAR(255) NOT NULL,
+        FechaDeNacimiento DATE,
+        CUIT VARCHAR(20),
+        Domicilio VARCHAR(255),
+        Celular VARCHAR(15),
+        Email VARCHAR(255)
+    );
+END IF;
+
+
+--creo datos de prueba
+INSERT INTO Clientes (Nombres, Apellidos, FechaNacimiento, CUIT, Domicilio, Celular, Email)
+VALUES
+    ('Nombre1', 'Apellido1', '1990-01-01', '12345678901', 'Domicilio1', '1234567890', 'email1@example.com'),
+    ('Nombre2', 'Apellido2', '1985-02-15', '23456789012', 'Domicilio2', '2345678901', 'email2@example.com');
+
+Creación del proyecto Web API
